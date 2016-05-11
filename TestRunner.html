@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Tests </title>
+        <link rel="stylesheet" href="./node_modules/mocha/mocha.css" />
+        <style>
+        #quote-box {
+            display: none;   
+        }
+        body {
+            background-color: white;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="quote-box"></div>
+        <div id="loadQuote"></div>
+        <div id="mocha"></div>
+        <script src="./node_modules/mocha/mocha.js"></script>
+        <script src="./node_modules/chai/chai.js"></script>
+        <script src="./node_modules/sinon-browser-only/sinon.js"></script>
+        <script>
+            mocha.ui('bdd'); 
+            mocha.reporter('html');
+            var expect = chai.expect;
+        </script>
+        <script src="js/script.js"></script>
+        <script src="test/test.js"></script>
+        <script>
+            if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+            else { mocha.run(); }
+        </script>
+    </body>
+</html>
